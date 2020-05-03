@@ -1,6 +1,6 @@
 {
   "name": "@hacss/compose-plugins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Combine multiple plugins into a single plugin.",
   "main": "index.js",
   "scripts": {
