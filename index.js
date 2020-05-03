@@ -3,7 +3,12 @@ var composePlugins = function(a,b) {
     function(decls) {
       return getFn(a)(getFn(b)(decls));
     },
-    [].concat(a[1] || []).concat(b[1] || []),
+    []
+      .concat(a[1] || [])
+      .concat(b[1] || [])
+      .reduce(function(xs, x) {
+        return xs.indexOf(x) === -1 ? xs.concat(x) : xs;
+      }, [])
   ];
   
   function getFn(x) {

@@ -38,4 +38,13 @@ describe("compose function", () => {
 
     expect(actual).to.deep.equal(expected);
   });
+
+  it("should deduplicate recognized properties", () => {
+    const [_, properties] = compose(
+      [ x => x, ["padding-x"] ],
+      [ x => x, ["padding-x"] ],
+    );
+    console.log(properties);
+    expect(properties).to.deep.equal(["padding-x"]);
+  });
 });
