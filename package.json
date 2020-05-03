@@ -1,0 +1,32 @@
+{
+  "name": "@hacss/compose-plugins",
+  "version": "1.0.0",
+  "description": "Combine multiple plugins into a single plugin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hacss/compose-plugins.git"
+  },
+  "keywords": [
+    "hacss",
+    "plugin",
+    "compose",
+    "css",
+    "atomic",
+    "inline",
+    "styles"
+  ],
+  "author": "Nick Saunders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacss/compose-plugins/issues"
+  },
+  "homepage": "https://hacss.io/",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2"
+  }
+}
