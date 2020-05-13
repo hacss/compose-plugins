@@ -30,6 +30,12 @@ var validDecls = function (x, fallback) {
 };
 
 var getFn = function (x) {
+  if (!x) {
+    return function (x) {
+      return x;
+    };
+  }
+
   if (typeof x[0] === "function") {
     return x[0];
   }
@@ -49,8 +55,8 @@ var composePlugins = function (a, b) {
       return resa;
     },
     []
-      .concat(a[1] || [])
-      .concat(b[1] || [])
+      .concat((a || [])[1] || [])
+      .concat((b || [])[1] || [])
       .reduce(function (xs, x) {
         return xs.indexOf(x) === -1 && typeof x === "string"
           ? xs.concat(x)

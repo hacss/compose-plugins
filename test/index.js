@@ -81,4 +81,15 @@ describe("compose function", () => {
     const actual = compose([x => x, ["foo", 1]], [x => x, ["bar", false]])[1];
     expect(actual).to.deep.equal(["foo", "bar"]);
   });
+
+  it("ignores null plugin arguments", () => {
+    const add = n => decls => {
+      Object.keys(decls).forEach(key => (decls[key] = decls[key] + n));
+      return decls;
+    };
+
+    const actual = compose(add(1), null, add(2))[0]({ x: 1 });
+
+    expect(actual.x).to.equal(4);
+  });
 });
